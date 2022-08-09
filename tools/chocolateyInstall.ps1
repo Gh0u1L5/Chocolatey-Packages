@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$url        = 'https://download.bitcomet.com/achive/BitComet_1.91_setup.exe'
+$url         = 'https://download.bitcomet.com/achive/BitComet_1.91_setup.exe'
 $packageArgs = @{
   softwareName  = 'BitComet*'
   packageName   = $env:ChocolateyPackageName

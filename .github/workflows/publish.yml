@@ -9,6 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Cleanup
+        run: rm -r .git .github
+
       - name: Pack
         uses: crazy-max/ghaction-chocolatey@v2.0.0
         with:
