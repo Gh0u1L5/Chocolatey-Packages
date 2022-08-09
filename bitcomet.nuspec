@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>bitcomet</id>
-    <version>1.79</version>
+    <version>1.91</version>
     <title>BitComet</title>
     <authors>BitComet</authors>
-    <owners>KhayR</owners>
+    <owners>Gh0u1L5</owners>
     <licenseUrl>https://www.bitcomet.com/en/license</licenseUrl>
     <projectUrl>https://www.bitcomet.com/en</projectUrl>
     <iconUrl>https://cdn.api.tatar/images/chocolatey-packages/bitcomet.png</iconUrl>
