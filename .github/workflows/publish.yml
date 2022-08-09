@@ -11,8 +11,8 @@ jobs:
 
       - name: Cleanup
         run: |
-          rm -r .git
-          rm -r .github
+          Remove-Item -Recurse -Force .git
+          Remove-Item -Recurse -Force .github
 
       - name: Pack
         uses: crazy-max/ghaction-chocolatey@v2.0.0
