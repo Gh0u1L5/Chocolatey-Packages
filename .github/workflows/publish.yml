@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - master
 jobs:
   publish:
     runs-on: windows-latest
