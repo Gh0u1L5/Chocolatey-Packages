@@ -7,6 +7,7 @@
     <description>Official Go implementation of the Ethereum protocol</description>
     <authors>ethereum</authors>
     <owners>Gh0u1L5</owners>
+    <iconUrl>https://geth.ethereum.org/static/images/ethereum.png</iconUrl>
     <projectSourceUrl>https://github.com/ethereum/go-ethereum</projectSourceUrl>
     <packageSourceUrl>https://github.com/Gh0u1L5/Chocolatey-Packages/tree/Go-Ethereum</packageSourceUrl>
   </metadata>
