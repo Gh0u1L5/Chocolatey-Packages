@@ -2,6 +2,8 @@ on:
   push:
     branches-ignore:
       - master
+    paths:
+      - 'package/**'
 jobs:
   publish:
     runs-on: windows-latest
