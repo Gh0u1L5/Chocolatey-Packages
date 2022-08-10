@@ -12,6 +12,7 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
+      - run: pip install -r requirements.txt
 
       - name: Peek
         run: python check-update.py
