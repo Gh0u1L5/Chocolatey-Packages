@@ -1,0 +1,28 @@
+on:
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  peek:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+
+      - name: Peek
+        run: python check-update.py
+
+      - name: Bump
+        run: |
+          git config --global user.name 'Headless'
+          git config --global user.email 'headless@example.com'
+          git commit -am "Bump version"
+          git push
