@@ -9,15 +9,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cleanup
-        run: |
-          Remove-Item -Recurse -Force .git
-          Remove-Item -Recurse -Force .github
-
       - name: Pack
         uses: crazy-max/ghaction-chocolatey@v2.0.0
         with:
-          args: pack
+          args: pack .\package\spec.nuspec
 
       - name: Authorize
         uses: crazy-max/ghaction-chocolatey@v2.0.0
