@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import backoff
+import base64
 import hashlib
-import re
 import requests
 import sys
 from lxml import etree
@@ -67,8 +67,30 @@ def update_installer_checksum(checksum: str):
 
 @backoff.on_exception(backoff.expo, requests.exceptions.RequestException, max_tries=3)
 def check_latest_version() -> Tuple[str, str, str]:
-    version, url, checksum = '', '', ''
-    return version, url, checksum
+    # Get the latest version.
+    r = requests.get('https://api.github.com/repos/ethereum/go-ethereum/releases/latest')
+    if r.status_code != 200:
+        raise Exception(f'Failed to check latest version from github.')
+
+    latest_version = r.json()['tag_name']
+    if latest_version.startswith('v'):
+        latest_version = latest_version[1:]
+
+    # Get the download url and checksum.
+    r = requests.get('https://gethstore.blob.core.windows.net/builds?restype=container&comp=list&prefix=geth-windows-amd64-')
+    if r.status_code != 200:
+        raise Exception(f'Failed to check metadata from gethstore.')
+
+    root = etree.XML(r.content)
+    for blob in root.find('Blobs').iter('Blob'):
+        file = blob.find('Name').text
+        if file.startswith('geth-windows-amd64-' + latest_version) and file.endswith('.exe'):
+            if 'unstable' not in file:
+                url = 'https://gethstore.blob.core.windows.net/builds/' + file
+                checksum = blob.find('Properties/Content-MD5').text
+                checksum = base64.b64decode(checksum).hex()
+                return latest_version, url, checksum
+    raise Exception(f'Failed to find latest version in gethstore.')
 
 
 ###############################################################################
