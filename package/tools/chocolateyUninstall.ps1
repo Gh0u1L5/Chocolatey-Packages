@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $packageArgs = @{
-  softwareName  = 'PLACEHOLDER'
+  softwareName  = 'Ethereum*'
   packageName   = $env:ChocolateyPackageName
   fileType      = 'EXE'
   silentArgs    = "/S"

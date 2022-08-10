@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <!-- Required Fields -->
-    <id></id>
-    <version></version>
-    <description></description>
-    <authors></authors>
+    <id>geth</id>
+    <version>1.10.20</version>
+    <title>Go Ethereum</title>
+    <description>Official Go implementation of the Ethereum protocol</description>
+    <authors>ethereum</authors>
+    <owners>Gh0u1L5</owners>
+    <projectSourceUrl>https://github.com/ethereum/go-ethereum</projectSourceUrl>
+    <packageSourceUrl>https://github.com/Gh0u1L5/Chocolatey-Packages/tree/Go-Ethereum</packageSourceUrl>
   </metadata>
 </package>
