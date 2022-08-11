@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 2 * * *'
 jobs:
   check:
     runs-on: ubuntu-latest
