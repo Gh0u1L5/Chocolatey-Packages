@@ -1,8 +1,8 @@
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'
 jobs:
-  peek:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
