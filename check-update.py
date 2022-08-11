@@ -67,7 +67,7 @@ def update_installer_checksum(checksum: str):
 
 @backoff.on_exception(backoff.expo, requests.exceptions.RequestException, max_tries=3)
 def check_latest_version() -> Tuple[str, str, str]:
-    version, url, checksum = '', '', ''
+    version, url, checksum = 'PLACEHOLDER', 'PLACEHOLDER', 'PLACEHOLDER'
     return version, url, checksum
 
 
