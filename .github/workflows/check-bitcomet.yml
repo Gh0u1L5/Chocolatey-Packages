@@ -26,5 +26,5 @@ jobs:
         run: |
           git config --global user.name 'Headless'
           git config --global user.email 'headless@example.com'
-          git commit -am "Bump version"
+          git commit -am "Bump version" || true
           git push
