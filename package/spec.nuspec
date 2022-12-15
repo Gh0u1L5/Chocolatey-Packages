@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>bitcomet</id>
-    <version>1.97</version>
+    <version>1.98</version>
     <title>BitComet</title>
     <authors>BitComet</authors>
     <owners>Gh0u1L5</owners>
