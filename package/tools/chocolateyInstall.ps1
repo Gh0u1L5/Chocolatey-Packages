@@ -1,13 +1,13 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$url         = 'https://gethstore.blob.core.windows.net/builds/geth-windows-amd64-1.17.1-16783c16.exe'
+$url         = 'https://gethstore.blob.core.windows.net/builds/geth-windows-amd64-1.17.2-be4dc0c4.exe'
 $packageArgs = @{
   softwareName  = 'Ethereum*'
   packageName   = $env:ChocolateyPackageName
   fileType      = 'EXE'
   url           = $url
 
-  checksum      = '0fe8b0d7addaceaf75dff7e3b437e3e4'
+  checksum      = '283cd363f67bf914fb93412ad7d8d3b3'
   checksumType  = 'md5'
 
   silentArgs    = '/S'
